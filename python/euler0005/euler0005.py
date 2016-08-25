@@ -11,7 +11,7 @@ total_factor_count = {}
 
 # Build up a set of factors that includes the full set of prime factors for
 # every number between 1 and 20.
-for number in xrange(1, top):
+for number in xrange(1, top + 1):
     factor_count = prime_factor_count(number)
     for factor in factor_count:
         count = factor_count[factor]
