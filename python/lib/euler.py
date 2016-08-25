@@ -1,3 +1,5 @@
+from math import sqrt
+
 def prime_factors(number):
     factors = []
     factor = 2
@@ -18,3 +20,11 @@ def prime_factor_count(number):
         if factor not in factor_count or count > factor_count[factor]:
             factor_count[factor] = count
     return factor_count
+
+def pythagorean_triplet_with_sum(target_sum):
+    for a in xrange(1, target_sum + 1):
+        for b in xrange(a, target_sum + 1):
+            sum = a ** 2 + b ** 2
+            c = int(sqrt(sum))
+            if sum % c == 0 and a + b + c == target_sum:
+                return (a, b, c)
