@@ -21,6 +21,22 @@ def prime_factor_count(number):
             factor_count[factor] = count
     return factor_count
 
+def first_n_primes(n):
+    primes = []
+    prime_count = 0
+    number = 1
+    while prime_count < n:
+        number += 1
+        is_prime = True
+        for prime in primes:
+            if number % prime == 0:
+                is_prime = False
+                break
+        if is_prime:
+            prime_count += 1
+            primes.append(number)
+    return primes
+
 def pythagorean_triplet_with_sum(target_sum):
     for a in xrange(1, target_sum + 1):
         for b in xrange(a, target_sum + 1):

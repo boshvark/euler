@@ -3,23 +3,11 @@
 #
 # What is the 10 001st prime number?
 
-prime_count = 0
-top_prime_index = 10001
-number = 1
-primes = []
+from euler import first_n_primes
 
-while prime_count < top_prime_index:
-    number += 1
-    is_prime = True
-    for prime in primes:
-        if number % prime == 0:
-            is_prime = False
-            break
-    if is_prime:
-        prime_count += 1
-        primes.append(number)
-
-print "Prime #%d: %d" % (top_prime_index, primes[-1])
+prime_count = 10001
+primes = first_n_primes(prime_count)
+print "Prime #%d: %d" % (prime_count, primes[-1])
 
 
 
